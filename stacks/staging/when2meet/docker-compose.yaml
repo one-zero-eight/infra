@@ -1,0 +1,20 @@
+services:
+  when2meet:
+    image: "ghcr.io/one-zero-eight/monorepo:..."
+    restart: always
+    volumes:
+      - "/srv/innohassle/_portainer/stacks/when2meet/settings.yaml:/app/settings.yaml:ro"
+    environment:
+      TZ: "Europe/Moscow"
+      FORWARDED_ALLOW_IPS: "*"
+      APP_MODULE: src.when2meet.app:app
+    ports:
+      - "8020:8000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    deploy:
+      resources:
+        limits:
+          memory: 1g
+        reservations:
+          memory: 500m
