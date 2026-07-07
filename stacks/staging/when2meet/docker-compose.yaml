@@ -1,6 +1,6 @@
 services:
   when2meet:
-    image: ghcr.io/one-zero-eight/monorepo:sha-f8748e550d1b2653eb18afe15c8f84c414c57b07
+    image: ghcr.io/one-zero-eight/monorepo:sha-4d93feecde65e36ceeaaa57c4be1a90952591c78
     restart: always
     volumes:
       - "/srv/innohassle/_portainer/stacks/when2meet/settings.yaml:/app/settings.yaml:ro"
